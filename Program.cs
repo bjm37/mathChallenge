@@ -15,7 +15,12 @@ namespace mathChallenge
             Convert.ToInt32(number1);
             Convert.ToInt32(number2);
 
+
             //perform the task with a new method. This will include converting the strings to integers
+        }
+        public void Task()
+        {
+
         }
     }
 }
