@@ -36,9 +36,15 @@ namespace mathChallenge
             }
         }
         //declaring task method
-        public void FindTotal()
-        {
-            Console.WriteLine("Hello World!");
-        }
+        /* public Stack<int> NumbersIn(int numberOne)
+         {
+             if (numberOne == 0) return new Stack<int>();
+
+             var firstArray = NumbersIn(numberOne / 10);
+
+             firstArray.Push(numberOne % 10);
+
+             return firstArray.ToArray;
+          }*/
     }
 }
