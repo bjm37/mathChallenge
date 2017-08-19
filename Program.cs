@@ -32,9 +32,6 @@ namespace mathChallenge
 
             //declaring task method
            static void SumTotal()
-
-            var num1 = Convert.ToInt32(firstInput);
-            var num2 = Convert.ToInt32(firstInput);
             {
                 var firstArray = new Stack<int>();
 
