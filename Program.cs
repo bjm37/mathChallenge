@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace mathChallenge
 {
@@ -6,29 +7,16 @@ namespace mathChallenge
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the math challenge! Please type any four-digit number below:"); //request the first number of the user
+            List<int>  = new List<int>();
 
-            int numberOne;
-
-            String numOneInput = Console.ReadLine();
-
-            while (!Int32.TryParse(numOneInput, out numberOne))
+            for (int i = 0; i < 5; i++)
             {
-                Console.WriteLine("Not a valid number, try again.");
-
-                numOneInput = Console.ReadLine();
-            }
-
-            Console.WriteLine("Thanks! Now, please type a second four-digit number of choice below:"); //request the second number of the user
-            int numberTwo;
-
-            String numTwoInput = Console.ReadLine();
-
-            while (!Int32.TryParse(numTwoInput, out numberTwo))
-            {
-                Console.WriteLine("Not a valid number, try again.");
-
-                numTwoInput = Console.ReadLine();
+                string userValue = Console.ReadLine();
+                int userInt;
+                if (int.TryParse(userValue, out userInt))
+                {
+                    userInts.Add(userInt);
+                }
             }
         }
     }
