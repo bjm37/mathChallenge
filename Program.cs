@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace mathChallenge
 {
@@ -7,17 +10,10 @@ namespace mathChallenge
     {
         static void Main(string[] args)
         {
-            List<int>  = new List<int>();
-
-            for (int i = 0; i < 5; i++)
             {
-                string userValue = Console.ReadLine();
-                int userInt;
-                if (int.TryParse(userValue, out userInt))
-                {
-                    userInts.Add(userInt);
-                }
-            }
-        }
+            
+                [MaxLength(20), ErrorMessage = "User name can't be more than 20 characters"), MinLength(5, ErrorMessage = "User name can't be less than 5 characters")]
+        public string Name { get; set; }
+    }
     }
 }
