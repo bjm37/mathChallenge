@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace mathChallenge
 {
@@ -6,21 +10,32 @@ namespace mathChallenge
     {
         static void Main(string[] args)
         {
+            //request the first number of the user
             Console.WriteLine("Welcome to the math challenge! Please type any four-digit number below:");
-            var number1 = Console.ReadLine();
+            int numberOne;
+            String numOneInput = Console.ReadLine();
 
+            //integer validation
+            while (!Int32.TryParse(numOneInput, out numberOne))
+            {
+                Console.WriteLine("Not a valid four-digit number, try again.");
+
+                numOneInput = Console.ReadLine();
+            }
+
+            //request the second number of the user
             Console.WriteLine("Thanks! Now, please type a second four-digit number of choice below:");
-            var number2 = Console.ReadLine();
+            int numberTwo;
+            String numTwoInput = Console.ReadLine();
 
-            Convert.ToInt32(number1);
-            Convert.ToInt32(number2);
+            //integer validation
+            while (!Int32.TryParse(numTwoInput, out numberTwo))
+            {
+                Console.WriteLine("Not a valid four-digit number, try again.");
 
-
-            //perform the task with a new method. This will include converting the strings to integers
+                numTwoInput = Console.ReadLine();
+            }
         }
-        public void Task()
-        {
 
-        }
     }
 }
