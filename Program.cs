@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace mathChallenge
 {
     class Program
     {
-        static void Main(string[] args)
+        string numOneInput, numTwoInput;
+        int numberOne, numberTwo;
+
+        public void Main(string[] args)
         {
             //request the first number of the user
             Console.WriteLine("Welcome to the math challenge! Please type any four-digit number below:");
@@ -36,6 +35,10 @@ namespace mathChallenge
                 numTwoInput = Console.ReadLine();
             }
         }
-
+        //declaring task method
+        public void FindTotal()
+        {
+            Console.WriteLine("Hello World!");
+        }
     }
 }
