@@ -15,7 +15,7 @@ namespace mathChallenge
             while (!Int32.TryParse(firstInput, out int secondOutput))  //integer validation
             {
                 Console.WriteLine("Not a valid four-digit number, try again.");
-                firstInput = Console.ReadLine();
+                num1 = Convert.ToInt32(Console.ReadLine());
             }
 
 
@@ -26,7 +26,7 @@ namespace mathChallenge
             while (!Int32.TryParse(secondInput, out int secondOutput)) //integer validation
             {
                 Console.WriteLine("Not a valid four-digit number, try again.");
-                secondInput = Console.ReadLine();
+                num2 = Convert.ToInt32(Console.ReadLine());
             }
 
         }
@@ -46,16 +46,8 @@ namespace mathChallenge
                 secondArray.Push(num1 % 10);
 
             return secondArray.ToArray();
+
         }
-        /* public Stack<int> NumbersIn(int numberOne)
-         {
-             if (numberOne == 0) return new Stack<int>();
 
-             var firstArray = NumbersIn(numberOne / 10);
-
-             firstArray.Push(numberOne % 10);
-
-             return firstArray.ToArray;
-          }*/
     }
 }
