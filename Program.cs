@@ -10,10 +10,32 @@ namespace mathChallenge
     {
         static void Main(string[] args)
         {
+            //request the first number of the user
+            Console.WriteLine("Welcome to the math challenge! Please type any four-digit number below:");
+            int numberOne;
+            String numOneInput = Console.ReadLine();
+
+            //integer validation
+            while (!Int32.TryParse(numOneInput, out numberOne))
             {
-            
-                [MaxLength(20), ErrorMessage = "User name can't be more than 20 characters"), MinLength(5, ErrorMessage = "User name can't be less than 5 characters")]
-        public string Name { get; set; }
-    }
+                Console.WriteLine("Not a valid four-digit number, try again.");
+
+                numOneInput = Console.ReadLine();
+            }
+
+            //request the second number of the user
+            Console.WriteLine("Thanks! Now, please type a second four-digit number of choice below:");
+            int numberTwo;
+            String numTwoInput = Console.ReadLine();
+
+            //integer validation
+            while (!Int32.TryParse(numTwoInput, out numberTwo))
+            {
+                Console.WriteLine("Not a valid four-digit number, try again.");
+
+                numTwoInput = Console.ReadLine();
+            }
+        }
+
     }
 }
