@@ -1,21 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+
 
 namespace mathChallenge
 {
     class Program
     {
-        string numOneInput, numTwoInput;
-        int numberOne, numberTwo;
-
-        public void Main(string[] args)
+        static void Main(string[] args)
         {
             //request the first number of the user
             Console.WriteLine("Welcome to the math challenge! Please type any four-digit number below:");
-            int numberOne;
             String numOneInput = Console.ReadLine();
 
             //integer validation
-            while (!Int32.TryParse(numOneInput, out numberOne))
+            while (!Int32.TryParse(numOneInput, out int numberOne))
             {
                 Console.WriteLine("Not a valid four-digit number, try again.");
 
@@ -24,11 +22,10 @@ namespace mathChallenge
 
             //request the second number of the user
             Console.WriteLine("Thanks! Now, please type a second four-digit number of choice below:");
-            int numberTwo;
             String numTwoInput = Console.ReadLine();
 
             //integer validation
-            while (!Int32.TryParse(numTwoInput, out numberTwo))
+            while (!Int32.TryParse(numTwoInput, out int numberTwo))
             {
                 Console.WriteLine("Not a valid four-digit number, try again.");
 
@@ -36,9 +33,14 @@ namespace mathChallenge
             }
         }
         //declaring task method
-        public void FindTotal()
+        public int[] SumTotal(int numberOne, int numberTwo)
         {
-            Console.WriteLine("Hello World!");
+            var firstArray = new Stack<int>();
+
+            for (; numberOne > 0; numberOne /= 10)
+                firstArray.Push(numberOne % 10);
+
+            return firstArray.ToArray();
         }
     }
 }
