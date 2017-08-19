@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 
 namespace mathChallenge
@@ -27,27 +26,23 @@ namespace mathChallenge
             {
                 Console.WriteLine("Not a valid four-digit number, try again.");
                 num2 = Convert.ToInt32(Console.ReadLine());
+
+                int[] firstArray = new int[4]; ; //creating an array for the first number
+                for (; num1 > 0; num1 /= 10)
+                    firstArray.(num1 % 10);
+                Console.WriteLine(firstArray);
+
+                int[] secondArray = new int[4]; //creating an array for the second number
+                for (; num2 > 0; num2 /= 10)
+                    secondArray.(num2 % 10);
+                Console.WriteLine(secondArray);
+
+            }
+            /* public Stack<int> NumbersIn(int numberOne) Start a new method???*/
+            {
+                //complete the task here?
             }
 
         }
-        //declaring task method
-        public int[] NumbersIn(int num1, int num2)
-        {
-            var firstArray = new Stack<int>(); //creating an array for the first number
-
-            for (; num1 > 0; num2 /= 10)
-                firstArray.Push(num1 % 10);
-
-            return firstArray.ToArray();
-
-            var secondArray = new Stack<int>(); ////creating an array for the second number
-
-            for (; num1 > 0; num2 /= 10)
-                secondArray.Push(num1 % 10);
-
-            return secondArray.ToArray();
-
-        }
-
     }
 }
