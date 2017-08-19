@@ -6,16 +6,30 @@ namespace mathChallenge
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the math challenge! Please type any four-digit number below:");
-            var number1 = Console.ReadLine();
+            Console.WriteLine("Welcome to the math challenge! Please type any four-digit number below:"); //request the first number of the user
 
-            Console.WriteLine("Thanks! Now, please type a second four-digit number of choice below:");
-            var number2 = Console.ReadLine();
+            int numberOne;
 
-            Convert.ToInt32(number1);
-            Convert.ToInt32(number2);
+            String numOneInput = Console.ReadLine();
 
-            //perform the task with a new method. This will include converting the strings to integers
+            while (!Int32.TryParse(numOneInput, out numberOne))
+            {
+                Console.WriteLine("Not a valid number, try again.");
+
+                numOneInput = Console.ReadLine();
+            }
+
+            Console.WriteLine("Thanks! Now, please type a second four-digit number of choice below:"); //request the second number of the user
+            int numberTwo;
+
+            String numTwoInput = Console.ReadLine();
+
+            while (!Int32.TryParse(numTwoInput, out numberTwo))
+            {
+                Console.WriteLine("Not a valid number, try again.");
+
+                numTwoInput = Console.ReadLine();
+            }
         }
     }
 }
