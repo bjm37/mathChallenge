@@ -6,7 +6,7 @@ namespace mathChallenge
 {
     class Program
     {
-        public void Main(string[] args)
+        static void Main(string[] args)
         {
             //request the first number of the user
             Console.WriteLine("Welcome to the math challenge! Please type any four-digit number below:");
