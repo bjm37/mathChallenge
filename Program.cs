@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;using System.Text;using System.Threading.Tasks;
+﻿using System;
+
 
 
 
@@ -10,67 +9,86 @@ namespace mathChallenge
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the math challenge! Please type any four-digit number below:");  //request the first number of the user
+            //request the first number of the user 
+            Console.WriteLine("Welcome to the math challenge! Please type any three-digit number below:");
             String firstInput = Console.ReadLine();
-            Int32 num1 = Convert.ToInt32(firstInput);
 
-            while (!Int32.TryParse(firstInput, out int secondOutput))  //integer validation
+            while (!Int32.TryParse(firstInput, out int firstOutput))  //integer validation
             {
-                Console.WriteLine("Not a valid four-digit number, try again.");
-                num1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Not a valid three-digit number, try again.");
             }
+            int num1 = Convert.ToInt32(firstInput);
 
-
-            Console.WriteLine("Thanks! Now, please type a second four-digit number of choice below:");  //request the second number of the user
+            //request the second number of the user
+            Console.WriteLine("Thanks! Now, please type a second three-digit number of choice below:");
             String secondInput = Console.ReadLine();
-            Int32 num2 = Convert.ToInt32(secondInput);
 
             while (!Int32.TryParse(secondInput, out int secondOutput)) //integer validation
             {
-                Console.WriteLine("Not a valid four-digit number, try again.");
-                num2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Not a valid three-digit number, try again.");
             }
+            int num2 = Convert.ToInt32(secondInput);
 
-        }
-       /*declaring task method
-        public int[] NumbersIn(int num1, int num2)
-        {
-            var firstArray = new Stack<int>(); //creating an array for the first number
+            // assigning each digit in the six slots a variable
+            int dig1num1 = 0;
+            int dig2num1 = 0;
+            int dig3num1 = 0;
 
-            for (; num1 > 0; num1 /= 10)
-                firstArray.Push(num1 % 10);
+            int dig1num2 = 0;
+            int dig2num2 = 0;
+            int dig3num2 = 0;
 
-            return firstArray.ToArray();
+            //Splitting each number into individual integers
+            dig1num1 = (num1 % 10);
+            dig2num1 = (num1 / 10) % 10;
+            dig3num1 = (num1 / 100);
 
-            var secondArray = new Stack<int>(); ////creating an array for the second number
+            dig1num2 = (num2 % 10);
+            dig2num2 = (num2 / 10) % 10;
+            dig3num2 = (num2 / 100);
 
-            for (; num2 > 0; num2 /= 10)
-                secondArray.Push(num2 % 10);
+            //Writing the new integers to the console
+            Console.WriteLine("Press enter to get individual digits for your first number");
+            Console.WriteLine("{0}->{1}, {2}, {3}", num1, dig3num1, dig2num1, dig1num1);
+            //Console.ReadKey();
 
-            return secondArray.ToArray();
+            Console.WriteLine("Press enter to get individual digits for your second number");
+            Console.WriteLine("{0}->{1}, {2}, {3}", num2, dig3num2, dig2num2, dig1num2);
+            //Console.ReadKey();
 
-
-            //Parsing the numbers
+            // constructing comparison aka addition variables
             int total1 = 0;
             int total2 = 0;
+            int total3 = 0;
 
-            for (i in firstArray; i < firstArray.length; i++)
+            //combining corresponding numbers
+            total1 = (dig1num2 + dig1num2);
+            total2 = (dig2num1 + dig2num2);
+            total3 = (dig3num1 + dig3num2);
+
+            //boolean condition to test whether the corresponding numbers are equal
+            bool a = (total1 == total2 && total2 == total3);
+            bool b = (total1 != total2 && total2 == total3);
+            bool c = (total1 == total2 && total2 != total3);
+
+            if (a)
             {
-                total1 += i;
+                Console.WriteLine("True");
+                //Console.ReadLine();
             }
-            for (i in secondArray; i < secondArray.length; i++)
+
+            if (b)
             {
-                total2 += i;
+                Console.WriteLine("False");
+                //Console.ReadLine();
             }
 
-            if (total1 == total2)
+            if (c)
             {
-                return true;
-           else {
-                    return false;
-                }
-
-            }*/
+                Console.WriteLine("False");
+                //Console.ReadLine();
+            }
 
         }
     }
+}
