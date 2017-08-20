@@ -30,7 +30,7 @@ namespace mathChallenge
             }
 
         }
-        //declaring task method
+       /*declaring task method
         public int[] NumbersIn(int num1, int num2)
         {
             var firstArray = new Stack<int>(); //creating an array for the first number
@@ -45,7 +45,7 @@ namespace mathChallenge
             for (; num2 > 0; num2 /= 10)
                 secondArray.Push(num2 % 10);
 
-            return secondArray.ToArray();
+            return secondArray.ToArray();*/
 
 
             //Parsing the numbers
