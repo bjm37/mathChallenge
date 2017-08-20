@@ -40,7 +40,26 @@ namespace mathChallenge
 
             /* public Stack<int> NumbersIn(int numberOne) Start a new method???*/
             {
-                //complete the task here?
+                int total1 = 0;
+                int total2 = 0;
+
+                for (i in firstArray; i < firstArray.length; i++)
+                {
+                    total1 += i;
+                }
+                for (i in secondArray; i < secondArray.length; i++)
+                {
+                    total2 += i;
+                }
+
+                if (total1 == total2)
+                {
+                    return true;
+                    else 
+                    {
+                        return false;
+                    }
+                }
             }
 
         }
