@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;using System.Text;using System.Threading.Tasks;
+
 
 
 namespace mathChallenge
@@ -45,7 +47,7 @@ namespace mathChallenge
             for (; num2 > 0; num2 /= 10)
                 secondArray.Push(num2 % 10);
 
-            return secondArray.ToArray();*/
+            return secondArray.ToArray();
 
 
             //Parsing the numbers
@@ -68,7 +70,7 @@ namespace mathChallenge
                     return false;
                 }
 
-            }
+            }*/
 
         }
     }
