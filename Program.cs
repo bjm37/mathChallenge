@@ -35,19 +35,40 @@ namespace mathChallenge
         {
             var firstArray = new Stack<int>(); //creating an array for the first number
 
-            for (; num1 > 0; num2 /= 10)
+            for (; num1 > 0; num1 /= 10)
                 firstArray.Push(num1 % 10);
 
             return firstArray.ToArray();
 
             var secondArray = new Stack<int>(); ////creating an array for the second number
 
-            for (; num1 > 0; num2 /= 10)
-                secondArray.Push(num1 % 10);
+            for (; num2 > 0; num2 /= 10)
+                secondArray.Push(num2 % 10);
 
             return secondArray.ToArray();
 
-        }
 
+            //Parsing the numbers
+            int total1 = 0;
+            int total2 = 0;
+
+            for (i in firstArray; i < firstArray.length; i++)
+            {
+                total1 += i;
+            }
+            for (i in secondArray; i < secondArray.length; i++)
+            {
+                total2 += i;
+            }
+
+            if (total1 == total2)
+            {
+                return true;
+           else {
+                    return false;
+                }
+
+            }
+
+        }
     }
-}
