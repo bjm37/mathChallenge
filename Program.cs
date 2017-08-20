@@ -17,6 +17,7 @@ namespace mathChallenge
             while (!Int32.TryParse(firstInput, out int firstOutput))  //integer validation
             {
                 Console.WriteLine("Not a valid three-digit number, try again.");
+                firstInput = Console.ReadLine();
             }
             int num1 = Convert.ToInt32(firstInput);
 
@@ -27,6 +28,7 @@ namespace mathChallenge
             while (!Int32.TryParse(secondInput, out int secondOutput)) //integer validation
             {
                 Console.WriteLine("Not a valid three-digit number, try again.");
+                secondInput = Console.ReadLine();
             }
             int num2 = Convert.ToInt32(secondInput);
 
@@ -89,7 +91,6 @@ namespace mathChallenge
                 Console.WriteLine("False");
                 //Console.ReadLine();
             }
-
         }
     }
 }
