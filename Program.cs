@@ -1,4 +1,7 @@
-﻿using System;
+﻿using System;
+
+
+
 
 
 namespace mathChallenge
@@ -14,6 +17,7 @@ namespace mathChallenge
             while (!Int32.TryParse(firstInput, out int firstOutput))  //integer validation
             {
                 Console.WriteLine("Not a valid three-digit number, try again.");
+                num1 = Convert.ToInt32(Console.ReadLine());
             }
 
             Console.WriteLine("Thanks! Now, please type a second three-digit number of choice below:");  //request the second number of the user
@@ -23,6 +27,7 @@ namespace mathChallenge
             while (!Int32.TryParse(secondInput, out int secondOutput)) //integer validation
             {
                 Console.WriteLine("Not a valid three-digit number, try again.");
+                num1 = Convert.ToInt32(Console.ReadLine());
             }
 
             // assigning each digit in the six slots a variable
