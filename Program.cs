@@ -77,19 +77,16 @@ namespace mathChallenge
             if (a)
             {
                 Console.WriteLine("True");
-                //Console.ReadLine();
             }
 
             if (b)
             {
                 Console.WriteLine("False");
-                //Console.ReadLine();
             }
 
             if (c)
             {
                 Console.WriteLine("False");
-                //Console.ReadLine();
             }
         }
     }
