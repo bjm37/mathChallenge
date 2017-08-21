@@ -14,80 +14,53 @@ namespace mathChallenge
             Console.WriteLine("Welcome to the math challenge! Please type any three-digit number below:");
             String firstInput = Console.ReadLine();
 
-            while (!Int32.TryParse(firstInput, out int firstOutput))  //integer validation
+            while (firstInput.Length != 3 || !Int32.TryParse(firstInput, out int firstOutput))  //integer validation
             {
                 Console.WriteLine("Not a valid three-digit number, try again.");
                 firstInput = Console.ReadLine();
             }
-            int num1 = Convert.ToInt32(firstInput);
+            //int num1 = Convert.ToInt32(firstInput);
 
             //request the second number of the user
             Console.WriteLine("Thanks! Now, please type a second three-digit number of choice below:");
             String secondInput = Console.ReadLine();
 
-            while (!Int32.TryParse(secondInput, out int secondOutput)) //integer validation
+            while (secondInput.Length != 3 || !Int32.TryParse(secondInput, out int secondOutput)) //integer validation
             {
                 Console.WriteLine("Not a valid three-digit number, try again.");
                 secondInput = Console.ReadLine();
             }
-            int num2 = Convert.ToInt32(secondInput);
+            //int num2 = Convert.ToInt32(secondInput);
 
             // assigning each digit in the six slots a variable
-            int dig1num1 = 0;
-            int dig2num1 = 0;
-            int dig3num1 = 0;
-
-            int dig1num2 = 0;
-            int dig2num2 = 0;
-            int dig3num2 = 0;
-
-            //Splitting each number into individual integers
-            dig1num1 = (num1 % 10);
-            dig2num1 = (num1 / 10) % 10;
-            dig3num1 = (num1 / 100);
-
-            dig1num2 = (num2 % 10);
-            dig2num2 = (num2 / 10) % 10;
-            dig3num2 = (num2 / 100);
-
-            //Writing the new integers to the console
-            Console.WriteLine("Press enter to get individual digits for your first number");
-            Console.WriteLine("{0}->{1}, {2}, {3}", num1, dig3num1, dig2num1, dig1num1);
-            //Console.ReadKey();
-
-            Console.WriteLine("Press enter to get individual digits for your second number");
-            Console.WriteLine("{0}->{1}, {2}, {3}", num2, dig3num2, dig2num2, dig1num2);
-            //Console.ReadKey();
-
-            // constructing comparison aka addition variables
-            int total1 = 0;
-            int total2 = 0;
-            int total3 = 0;
-
-            //combining corresponding numbers
-            total1 = (dig1num2 + dig1num2);
-            total2 = (dig2num1 + dig2num2);
-            total3 = (dig3num1 + dig3num2);
-
-            //boolean condition to test whether the corresponding numbers are equal
-            bool a = (total1 == total2 && total2 == total3);
-            bool b = (total1 != total2 && total2 == total3);
-            bool c = (total1 == total2 && total2 != total3);
-
-            if (a)
+            var firstInputCharArray = firstInput.ToCharArray();
+            var secondInputCharArray = secondInput.ToCharArray();
+            int[] totals = new int[3];
+            for (int i = 0; i < firstInputCharArray.Length; ++i)
             {
-                Console.WriteLine("True");
+                totals[i] = AddDigits(firstInputCharArray[i], secondInputCharArray[i]);
             }
 
-            if (b)
+            int temp = totals[0];
+            bool result = true;
+            for (int i = 1; i < firstInputCharArray.Length; ++i)
             {
-                Console.WriteLine("False");
+                bool comparisonResult = (temp == totals[i]);
+                result = result && comparisonResult;
             }
+            Console.WriteLine(result);
 
-            if (c)
-            {
-                Console.WriteLine("False");
-            }
+
+        }
+
+        private static int AddDigits(char firstStringChar, char secondStringChar)
+        {
+            var int1 = Convert.ToInt32(firstStringChar);
+            var int2 = Convert.ToInt32(secondStringChar);
+            return int1 + int2;
+
+
+
         }
     }
 }
